@@ -6,6 +6,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class WelcomeController {
 	
+	@GetMapping
+	public String test() {
+		return "Test";
+
+	}
+	
 	@GetMapping("welcome")
 	public String showWelcomeMessage() {
 		return "Welcome to College Management System :)";
