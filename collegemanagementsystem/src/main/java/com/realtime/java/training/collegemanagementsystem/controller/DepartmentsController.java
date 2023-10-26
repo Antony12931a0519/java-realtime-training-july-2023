@@ -3,13 +3,21 @@ package com.realtime.java.training.collegemanagementsystem.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.realtime.java.training.collegemanagementsystem.pojo.Departments;
 import com.realtime.java.training.collegemanagementsystem.pojo.Student;
+import com.realtime.java.training.collegemanagementsystem.service.DepartmentService;
 
 @RestController
 public class DepartmentsController {
+
+	@Autowired
+	private DepartmentService departmentService;
 
 	@GetMapping("/")
 	public String test() {
@@ -34,6 +42,16 @@ public class DepartmentsController {
 		departments.add("CSE");
 		departments.add("CSE");
 		return departments;
+
+	}
+
+	@PostMapping("departments/save")
+	public String saveDepartment(@RequestBody Departments departments) {
+
+		if (departments != null)
+			return departmentService.saveDeparment(departments);
+
+		return null;
 
 	}
 
