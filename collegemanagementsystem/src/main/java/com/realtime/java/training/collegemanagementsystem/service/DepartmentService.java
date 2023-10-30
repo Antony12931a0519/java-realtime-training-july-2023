@@ -3,10 +3,18 @@ package com.realtime.java.training.collegemanagementsystem.service;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.realtime.java.training.collegemanagementsystem.pojo.Departments;
+import javax.xml.ws.ServiceMode;
 
-@Service
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.realtime.java.training.collegemanagementsystem.pojo.Departments;
+import com.realtime.java.training.collegemanagementsystem.repository.DepartmentRepository;
+
+@ServiceMode
 public class DepartmentService {
+	
+	@Autowired
+	private DepartmentRepository departmentRepository;
 
 	public String saveDeparment(Departments departments) {
 
@@ -26,6 +34,11 @@ public class DepartmentService {
 			return "Department details are not added successfully,Please try again";
 		}
 
+	}
+	
+	public List<Departments> getDepartmentList(){
+		
+		return (List<Departments>) departmentRepository.findAll();
 	}
 
 }

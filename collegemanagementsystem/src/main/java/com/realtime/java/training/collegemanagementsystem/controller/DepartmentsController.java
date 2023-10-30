@@ -13,6 +13,7 @@ import com.realtime.java.training.collegemanagementsystem.pojo.Departments;
 import com.realtime.java.training.collegemanagementsystem.pojo.Student;
 import com.realtime.java.training.collegemanagementsystem.service.DepartmentService;
 
+@RequestMapping("/")
 @RestController
 public class DepartmentsController {
 
@@ -26,22 +27,10 @@ public class DepartmentsController {
 	}
 
 	@GetMapping("/list")
-	public List<String> getDepartmentsList() {
+	public List<Departments> getDepartmentsList() {
 
-		List<String> departments = new ArrayList<>();
-		departments.add("CSE");
-		departments.add("CSE");
-		departments.add("CSE");
-		departments.add("CSE");
-		departments.add("CSE");
-		departments.add("CSE");
-		departments.add("CSE");
-		departments.add("CSE");
-		departments.add("CSE");
-		departments.add("CSE");
-		departments.add("CSE");
-		departments.add("CSE");
-		return departments;
+		
+		return departmentService.getDepartmentList();
 
 	}
 
