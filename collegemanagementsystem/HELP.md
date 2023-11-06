@@ -51,5 +51,25 @@ age=28
 
 }
 
+CRUD OPerations
+---------------
+
+Databases
+
+
+Tables
+
+
+Cloumns
+
+
+Data
+
+
+Create
+Read
+Update
+Delete
+
 
 
