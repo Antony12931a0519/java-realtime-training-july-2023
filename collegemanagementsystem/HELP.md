@@ -72,4 +72,26 @@ Update
 Delete
 
 
+-----------------
+
+StudentMdel
+
+firstname
+lastname
+address
+city
+mobile
+gender
+
+
+
+Student:
+fullname
+first name
+lastname
+genter
+biodata
+id
+
+
 

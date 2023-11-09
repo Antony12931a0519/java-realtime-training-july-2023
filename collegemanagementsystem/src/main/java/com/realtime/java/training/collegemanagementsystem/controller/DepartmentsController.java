@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.realtime.java.training.collegemanagementsystem.pojo.Departments;
-import com.realtime.java.training.collegemanagementsystem.pojo.Student;
+import com.realtime.java.training.collegemanagementsystem.pojo.StudentModel;
 import com.realtime.java.training.collegemanagementsystem.service.DepartmentService;
 
 @RequestMapping("/")
@@ -46,9 +46,9 @@ public class DepartmentsController {
 	}
 
 	@GetMapping("/studentdetsils")
-	public Student getStudentDetails() {
+	public StudentModel getStudentDetails() {
 
-		Student student = new Student();
+		StudentModel student = new StudentModel();
 		student.setName("Antony");
 		student.setAge("28");
 		return student;
@@ -56,19 +56,19 @@ public class DepartmentsController {
 	}
 
 	@GetMapping("/studentdetsils/list")
-	public List<Student> getStudentDetailsList() {
+	public List<StudentModel> getStudentDetailsList() {
 
-		List<Student> studentsList = new ArrayList<>();
+		List<StudentModel> studentsList = new ArrayList<>();
 
-		Student student = new Student();
+		StudentModel student = new StudentModel();
 		student.setName("Antony");
 		student.setAge("28");
 
-		Student student1 = new Student();
+		StudentModel student1 = new StudentModel();
 		student1.setName("Jaddu");
 		student1.setAge("28");
 
-		Student student2 = new Student();
+		StudentModel student2 = new StudentModel();
 		student2.setName("Rakesh");
 		student2.setAge("28");
 
