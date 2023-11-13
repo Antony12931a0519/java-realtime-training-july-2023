@@ -8,6 +8,8 @@ public class StudentModel {
 	private String age;
 	private String address;
 	private List<Long> ids ;
+	private int id;
+	
 	
 	
 	public String getName() {
@@ -33,6 +35,12 @@ public class StudentModel {
 	}
 	public void setAddress(String address) {
 		this.address = address;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
 	}
 	
 

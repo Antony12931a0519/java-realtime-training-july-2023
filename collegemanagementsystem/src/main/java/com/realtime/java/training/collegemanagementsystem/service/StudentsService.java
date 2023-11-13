@@ -87,5 +87,38 @@ public class StudentsService {
 		}
 
 	}
+	
+	public String updateStudentDetails(StudentModel studentModel) {
+
+		// retrieve the data
+		Optional<Student> obj = StudentRepository.findById((long) studentModel.getId());
+
+		if (obj.isPresent()) {
+			// write the logic to update the data in db
+
+			Student student = obj.get();
+
+			student.setName(studentModel.getName());
+			student.setAddress(studentModel.getAddress());
+
+			student = StudentRepository.save(student);
+
+			if (student != null && student.getName() != null) {
+
+				return "Student  is updated successfully.";
+
+			} else {
+				return "Student data is not updated successfully.Please try again";
+
+			}
+
+		} else {
+			// write the logic to either creeate a ne record or throw an error
+
+			return saveStudentDetails(studentModel);
+
+		}
+
+	}
 
 }
